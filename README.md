@@ -1,7 +1,7 @@
 
-# DIG 250 Base Unity Project
+# DIG 250 Sample Unity Project
 
-A base Unity project and Git repository to get your [DIG 250](https://github.com/omundy/game-art-dev) game started
+A sample Unity project and Git repository to get your [DIG 250](https://github.com/omundy/game-art-dev) game started
 
 ## Notes
 
