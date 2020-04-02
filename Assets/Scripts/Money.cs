@@ -13,7 +13,7 @@ public class Money : MonoBehaviour
 
     void FixedUpdate(){
     Currency += Factories;
-    Debug.Log(Currency);
+    //Debug.Log(Currency);
     }
     // Update is called once per frame
     void Update()

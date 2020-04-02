@@ -17,12 +17,36 @@ public class YearAndEvents : MonoBehaviour
     public Button fastForwardButton;
     public bool hasBeenClicked = false;
 
+
+    public Text eventTitle;
+    public Text eventBodyText;
+
+    List<string> earlyGameTitleList = new List<string>();
+    List<string> earlyGameDescList = new List<string>();
+    List<string> lateGameTitleList = new List<string>();
+    List<string> lateGameDescList = new List<string>();
+
+
+
     void Start()
     {
         Button btn = fastForwardButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
 
         globalEventPanel.SetActive(false);
+
+        StartCoroutine(OpenGlobalEventPanel());
+
+        earlyGameTitleList.Add("1");
+        earlyGameTitleList.Add("2");
+        earlyGameTitleList.Add("3");
+        earlyGameTitleList.Add("4");
+        earlyGameTitleList.Add("5");
+        earlyGameDescList.Add("1 Description");
+        earlyGameDescList.Add("2 Description");
+        earlyGameDescList.Add("3 Description");
+        earlyGameDescList.Add("4 Description");
+        earlyGameDescList.Add("5 Description");
     }
 
     void Update()
@@ -34,13 +58,29 @@ public class YearAndEvents : MonoBehaviour
             UpdateYearUI();
         }
 
-        if(yearText.text == "" + 1805)  // global event in 1850
-        {
+    }
+
+    IEnumerator OpenGlobalEventPanel(){
+        while(yearFloat <= 2100){
+            yield return new WaitForSeconds(5);
+
             globalEventPanel.SetActive(true);
             topLeftPanel.SetActive(false);
-			store.SetActive(false);
+            store.SetActive(false);
             Time.timeScale = 0;
+            EditGlobalEventDesc();
         }
+        
+    }
+
+    void EditGlobalEventDesc(){
+        int randNum = Random.Range(0, earlyGameTitleList.Count);
+
+        eventTitle.text = earlyGameTitleList[randNum];
+        eventBodyText.text = earlyGameDescList[randNum];
+
+        earlyGameTitleList.RemoveAt(randNum);
+        earlyGameDescList.RemoveAt(randNum);
     }
 
     public void ExitPopUp()
@@ -50,12 +90,10 @@ public class YearAndEvents : MonoBehaviour
         topLeftPanel.SetActive(true);
 		store.SetActive(true);
     }
-
+    
     public void YearInc(){
-        Debug.Log(yearText.text);
         year++;
         yearText.text = "" + year;
-        Debug.Log(yearText.text);
     }
 
     public void TaskOnClick()
