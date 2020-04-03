@@ -8,7 +8,7 @@ public class PercentIndustrialized : MonoBehaviour
     public GameObject canvas;
     public Text percent;
     public float percentF;
-    
+
     void Start()
     {
 
@@ -16,7 +16,9 @@ public class PercentIndustrialized : MonoBehaviour
 
     void Update()
     {
+      GameObject MoneyListener = GameObject.Find("Money Listener");
+      Money moneyScript = MoneyListener.GetComponent<Money>();
+      percent.text = "" + (moneyScript.Factories * 5);
 
-        percent.text = "" + percentF;
     }
 }
