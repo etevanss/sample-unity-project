@@ -49,7 +49,12 @@ public class MakePlaceable : MonoBehaviour
           //is mouse on continent
           RaycastHit2D iconHit = Physics2D.Raycast(mousePos,Vector2.zero, Mathf.Infinity,ICONLayer);
           //is mouse on icon
+          GameObject MoneyListener = GameObject.Find("Money Listener");
+          Money moneyScript = MoneyListener.GetComponent<Money>();
+          if(moneyScript.Currency > 0) {
+            moneyScript.Currency -= 1;
           if (iconHit.collider == null && landHit.collider != null) {
+
             Instantiate(finalObject, transform.position, Quaternion.identity);
             //create final object, at mouse position, maintain rotation
             UpdateCount();
@@ -59,5 +64,6 @@ public class MakePlaceable : MonoBehaviour
         } else if (Input.GetMouseButtonDown(1)) { //right click
           Destroy(this.gameObject); //remove spawner from mouse
         }
+      }
     }
 }
