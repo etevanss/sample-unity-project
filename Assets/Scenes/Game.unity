@@ -954,6 +954,8 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -969,6 +971,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c30d1af05f1e49cf9efc37a65984027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -996,7 +1010,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 2.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1026,6 +1040,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248d7f791b7394932b6c01200c4ea832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &560912637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1165,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 143, y: 64.4}
+  m_AnchoredPosition: {x: 133.45001, y: 63.000008}
   m_SizeDelta: {x: 73.7, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &568579670
@@ -1354,8 +1380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36.425, y: 56.14}
-  m_SizeDelta: {x: 285.15, y: 46.52}
+  m_AnchoredPosition: {x: -36.850037, y: 48.93}
+  m_SizeDelta: {x: 266.9, y: 58.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &703763863
 MonoBehaviour:
@@ -1388,7 +1414,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: skldfslfj sdlkf jalsdj f sdkjfa lsdjfalsd kfjsadljas lksjdfl saslk s
 --- !u!222 &703763864
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1756,8 +1782,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57.95, y: -26.12}
-  m_SizeDelta: {x: 242.1, y: 111.24}
+  m_AnchoredPosition: {x: -24, y: -40.85}
+  m_SizeDelta: {x: 292.6, y: 90.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &904394497
 MonoBehaviour:
@@ -3301,7 +3327,7 @@ GameObject:
   - component: {fileID: 2128159160}
   - component: {fileID: 2128159161}
   m_Layer: 0
-  m_Name: MoneyListener
+  m_Name: Money Listener
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

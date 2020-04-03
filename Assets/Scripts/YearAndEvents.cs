@@ -37,16 +37,26 @@ public class YearAndEvents : MonoBehaviour
 
         StartCoroutine(OpenGlobalEventPanel());
 
-        earlyGameTitleList.Add("1");
-        earlyGameTitleList.Add("2");
-        earlyGameTitleList.Add("3");
-        earlyGameTitleList.Add("4");
-        earlyGameTitleList.Add("5");
-        earlyGameDescList.Add("1 Description");
-        earlyGameDescList.Add("2 Description");
-        earlyGameDescList.Add("3 Description");
-        earlyGameDescList.Add("4 Description");
-        earlyGameDescList.Add("5 Description");
+        earlyGameTitleList.Add("A world war has erupted!");
+        earlyGameTitleList.Add("Efficient railway systems have been deployed");
+        earlyGameTitleList.Add("A global pandemic has ravaged industry worldwide");
+        earlyGameTitleList.Add("The world has entered an economic depression");
+        earlyGameTitleList.Add("The assembly line takes the world by storm!");
+        earlyGameTitleList.Add("The commercial shipping container revolutionizes industry");
+
+        earlyGameDescList.Add("All tools of industrialization will cost more until the war has ended. Be frugal!");
+        earlyGameDescList.Add("Mines now cost less and produce more money. Take advantage of this innovation!");
+        earlyGameDescList.Add("All industries will produce less money until the pandemic has ended. Stay safe and wash your hands!");
+        earlyGameDescList.Add("All industries will produce less money and cost more to place.");
+        earlyGameDescList.Add("All industries benefit from this invention by increasing production. Keep rolling in the money!");
+        earlyGameDescList.Add("Logging facilities, fisheries, and mines will now produce more money. Happy trucking!");
+
+
+        lateGameTitleList.Add("Overfishing and pollution continue to decimate fisheries");
+        lateGameTitleList.Add("Hot, dry climate results in global forest fires");
+
+        lateGameDescList.Add("Salmon, scad, and lobster have become globally extinct due to overfishing and polluted ecosystems. All fisheries have gone out of operation.");
+        lateGameDescList.Add("Forest fires across the world have stunted the logging industry. All logging industries have gone out of operation.");
     }
 
     void Update()
@@ -62,7 +72,7 @@ public class YearAndEvents : MonoBehaviour
 
     IEnumerator OpenGlobalEventPanel(){
         while(yearFloat <= 2100){
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(10);
 
             globalEventPanel.SetActive(true);
             topLeftPanel.SetActive(false);
@@ -70,7 +80,6 @@ public class YearAndEvents : MonoBehaviour
             Time.timeScale = 0;
             EditGlobalEventDesc();
         }
-        
     }
 
     void EditGlobalEventDesc(){
@@ -110,7 +119,7 @@ public class YearAndEvents : MonoBehaviour
 
     public void UpdateYearFastForwardUI()
     {
-        yearFloat += Time.deltaTime * 1/2 * 5; //5 year = 2 seconds
+        yearFloat += Time.deltaTime * 1/2 * 5; //5 years = 2 seconds
         year = Mathf.RoundToInt(yearFloat);
         yearText.text = "" + year;
     }
