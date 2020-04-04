@@ -1,6 +1,6 @@
 
 # DIG 250 Final Project - Spring 2020
-# Ethan Evans, Sam Davis, Thatcher Craig
+## Ethan Evans, Sam Davis, Thatcher Craig
 
 ## Notes
 
