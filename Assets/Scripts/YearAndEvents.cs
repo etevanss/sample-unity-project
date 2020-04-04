@@ -72,7 +72,7 @@ public class YearAndEvents : MonoBehaviour
 
     IEnumerator OpenGlobalEventPanel(){
         while(yearFloat <= 2100){
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(Random.Range(30, 50));
 
             globalEventPanel.SetActive(true);
             topLeftPanel.SetActive(false);

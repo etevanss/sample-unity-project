@@ -18,7 +18,7 @@ public class PercentIndustrialized : MonoBehaviour
     {
       GameObject MoneyListener = GameObject.Find("Money Listener");
       Money moneyScript = MoneyListener.GetComponent<Money>();
-      percent.text = "" + (moneyScript.Factories * 5);
+      percent.text = "" + (moneyScript.Factories * 2 + moneyScript.Fish * 4/3 + moneyScript.Mines * 4/3 + moneyScript.Wood * 4/3);
 
     }
 }

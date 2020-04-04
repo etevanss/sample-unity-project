@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MakePlaceable : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class MakePlaceable : MonoBehaviour
 
     [SerializeField]
     private string linkedCount;
+
+    [SerializeField]
+    private int price;
 
 
     void Start()
@@ -38,32 +42,46 @@ public class MakePlaceable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);//get mouse pos
         transform.position = new Vector3(mousePos.x, mousePos.y, -1);//put object on mouse, -1 z for layering; could be vector 2 otherwise
 
+        GameObject MoneyListener = GameObject.Find("Money Listener");
+        Money moneyScript = MoneyListener.GetComponent<Money>();
+
+        moneyScript.CurrencyF += Time.deltaTime * (1 + moneyScript.Factories + moneyScript.Wood * 4/3 + moneyScript.Fish * 4/3 + moneyScript.Mines * 4/3);
+        moneyScript.CurrencyRound = Mathf.RoundToInt(moneyScript.CurrencyF);
+        moneyScript.Currency.text = "" + moneyScript.CurrencyRound;
+        //Debug.Log(moneyScript.CurrencyF);
+
+
         if(Input.GetMouseButtonDown(0)) //leftclick
         {
-
 
           RaycastHit2D landHit = Physics2D.Raycast(mousePos,Vector2.zero, Mathf.Infinity,BGLayer);
           //is mouse on continent
           RaycastHit2D iconHit = Physics2D.Raycast(mousePos,Vector2.zero, Mathf.Infinity,ICONLayer);
           //is mouse on icon
-          GameObject MoneyListener = GameObject.Find("Money Listener");
-          Money moneyScript = MoneyListener.GetComponent<Money>();
-          if(moneyScript.Currency > 0) {
-            moneyScript.Currency -= 1;
-          if (iconHit.collider == null && landHit.collider != null) {
 
-            Instantiate(finalObject, transform.position, Quaternion.identity);
-            //create final object, at mouse position, maintain rotation
-            UpdateCount();
+
+          if(iconHit.collider == null && landHit.collider != null && moneyScript.CurrencyF >= price) {
+              moneyScript.CurrencyF -= price;
+              moneyScript.Currency.text = "" + moneyScript.CurrencyF;
+            
+
+              if (iconHit.collider == null && landHit.collider != null) {
+
+                Instantiate(finalObject, transform.position, Quaternion.identity);
+                //create final object, at mouse position, maintain rotation
+                UpdateCount();
+                
+              }
 
           }
 
         } else if (Input.GetMouseButtonDown(1)) { //right click
           Destroy(this.gameObject); //remove spawner from mouse
         }
-      }
+      
     }
 }

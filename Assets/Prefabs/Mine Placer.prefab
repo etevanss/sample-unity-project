@@ -103,3 +103,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   linkedCount: Mines
+  price: 5
