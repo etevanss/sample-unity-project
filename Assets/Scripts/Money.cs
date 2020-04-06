@@ -30,11 +30,11 @@ public class Money : MonoBehaviour
     public float mineF;
     public float mineRound;
 
-
+    
 
     void Start()
     {
-
+      
       fishPrice.text = "" + 5;
       woodPrice.text = "" + 5;
       factoryPrice.text = "" + 20;
@@ -45,11 +45,12 @@ public class Money : MonoBehaviour
       Currency.text = "" + CurrencyRound;
     }
 
-    void FixedUpdate(){
-    CurrencyF += Factories / 50;
-    CurrencyF += Time.deltaTime * (1 + Factories + Wood * 4/3 + Fish * 4/3 + Mines * 4/3);
-    CurrencyRound = Mathf.RoundToInt(CurrencyF);
-    Currency.text = "" + CurrencyRound;
+    void FixedUpdate()
+    {
+        CurrencyF += Factories / 50;
+        CurrencyF += Time.deltaTime * (1 + Factories + Wood * 4 / 3 + Fish * 4 / 3 + Mines * 4 / 3);
+        CurrencyRound = Mathf.RoundToInt(CurrencyF);
+        Currency.text = "" + CurrencyRound;
     }
     // Update is called once per frame
     void Update()

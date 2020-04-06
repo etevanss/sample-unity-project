@@ -35,9 +35,9 @@ public class CameraPanController : MonoBehaviour
         Mathf.Clamp(Camera.main.transform.position.y, -10, 10), Mathf.Clamp(Camera.main.transform.position.z, -10, 10));
 
         //RESET CAMERA TO STARTING POSITION WITH RIGHT CLICK
-        if (Input.GetMouseButton(1))
+        if (Input.GetKeyDown("z"))
         {
-          //  Camera.main.transform.position = ResetCamera;
+            Camera.main.transform.position = ResetCamera;
         }
     }
 }

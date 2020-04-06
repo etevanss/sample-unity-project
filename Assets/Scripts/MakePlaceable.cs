@@ -48,8 +48,6 @@ public class MakePlaceable : MonoBehaviour
 
         GameObject MoneyListener = GameObject.Find("Money Listener");
         Money moneyScript = MoneyListener.GetComponent<Money>();
-
-        
         //Debug.Log(moneyScript.CurrencyF);
 
 
