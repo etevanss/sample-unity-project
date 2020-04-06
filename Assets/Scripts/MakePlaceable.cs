@@ -49,9 +49,7 @@ public class MakePlaceable : MonoBehaviour
         GameObject MoneyListener = GameObject.Find("Money Listener");
         Money moneyScript = MoneyListener.GetComponent<Money>();
 
-        moneyScript.CurrencyF += Time.deltaTime * (1 + moneyScript.Factories + moneyScript.Wood * 4/3 + moneyScript.Fish * 4/3 + moneyScript.Mines * 4/3);
-        moneyScript.CurrencyRound = Mathf.RoundToInt(moneyScript.CurrencyF);
-        moneyScript.Currency.text = "" + moneyScript.CurrencyRound;
+        
         //Debug.Log(moneyScript.CurrencyF);
 
 
