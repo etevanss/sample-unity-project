@@ -67,21 +67,22 @@ public class MakePlaceable : MonoBehaviour
           if(iconHit.collider == null && landHit.collider != null && moneyScript.CurrencyF >= price) {
               moneyScript.CurrencyF -= price;
               moneyScript.Currency.text = "" + moneyScript.CurrencyF;
-            
+
 
               if (iconHit.collider == null && landHit.collider != null) {
 
                 Instantiate(finalObject, transform.position, Quaternion.identity);
                 //create final object, at mouse position, maintain rotation
                 UpdateCount();
-                
+
               }
 
           }
 
         } else if (Input.GetMouseButtonDown(1)) { //right click
           Destroy(this.gameObject); //remove spawner from mouse
+           Cursor.visible = true;
         }
-      
+
     }
 }

@@ -18,7 +18,7 @@ public void AddObject()
     foreach(GameObject placer in factorySpawners){
       GameObject.Destroy(placer);
     }
-	Cursor.visible = false;
+	   Cursor.visible = false;
     Instantiate(sampleObject); //make the new spawner
 
 }
