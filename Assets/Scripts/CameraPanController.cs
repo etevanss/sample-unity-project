@@ -31,8 +31,8 @@ public class CameraPanController : MonoBehaviour
             Camera.main.transform.position = Origin - Diference;
         }
         Camera.main.transform.position = new Vector3(
-        Mathf.Clamp(Camera.main.transform.position.x, -24, 24),
-        Mathf.Clamp(Camera.main.transform.position.y, -10, 10), Mathf.Clamp(Camera.main.transform.position.z, -10, 10));
+        Mathf.Clamp(Camera.main.transform.position.x, -4f, 4f),
+        Mathf.Clamp(Camera.main.transform.position.y, -3.0f, 3.0f), Mathf.Clamp(Camera.main.transform.position.z, -10, 10));
 
         //RESET CAMERA TO STARTING POSITION WITH RIGHT CLICK
         if (Input.GetKeyDown("z"))

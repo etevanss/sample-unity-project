@@ -10,11 +10,11 @@ public class CameraZoomController : MonoBehaviour
     private float targetZoom;
     //sensitivity to scroll wheel... used to make camera zoom look smoother... used 3 for now we will need to see what looks best
     private float zoomFactor = 3f;
-    private float zoomLerpSpeed = 10;
+    private float zoomLerpSpeed = 10f;
 
     void Start()
     {
-        ResetCamera = 6.3f;
+        ResetCamera = 5.7f;
         cam = Camera.main;
         targetZoom = cam.orthographicSize;
     }
@@ -27,7 +27,7 @@ public class CameraZoomController : MonoBehaviour
         scrollData = Input.GetAxis("Mouse ScrollWheel");
         targetZoom -= (scrollData * zoomFactor);
         //Clamp prevents camera from zooming way too far in and way too far out
-        targetZoom = Mathf.Clamp(targetZoom, 2.5f, 6.4f);
+        targetZoom = Mathf.Clamp(targetZoom, 2.5f, 5.75f);
         //Lerp is just linear interpolation and gets a point within a given distance 
         //between the starting position and ending position
         //in this case orthographic size and the target zoom
