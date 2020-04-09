@@ -18,9 +18,7 @@ public class MakePlaceable : MonoBehaviour
     [SerializeField]
     private string linkedCount;
 
-    [SerializeField]
-    private int price;
-
+    public int price;
 
     void Start()
     {
