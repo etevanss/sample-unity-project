@@ -8,4 +8,12 @@ public class MainMenu : MonoBehaviour
     public void ChooseContinent(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void HowToPlay(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+    }
+
+    public void BackToMM(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
+    }
 }

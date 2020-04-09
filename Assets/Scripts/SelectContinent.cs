@@ -15,13 +15,17 @@ public class SelectContinent : MonoBehaviour
   private LayerMask AFRICALayer;
   [SerializeField]
   private LayerMask AUSTRALIALayer;
-
+  public Vector3 ContinentPosition;
   private Vector3 mousePos;
 
     // Update is called once per frame
     private void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    IEnumerator CameraCoroutine()
+    {
+        yield return new WaitForSeconds(30);
     }
     void Update()
     {
@@ -36,20 +40,29 @@ public class SelectContinent : MonoBehaviour
 
             if (Eurasia.collider != null){
               Debug.Log("here");
+                DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
+                ContinentPosition = new Vector3(3.856f, 1.666f, -10.0f);
             }
             if (North.collider != null){
+                DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                ContinentPosition = new Vector3(-4.0f, 1.360f, -10);
             }
             if (South.collider != null){
+                DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                ContinentPosition = new Vector3(-3.445f, -2.309f, -10);
             }
             if (Australia.collider != null){
+                DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                ContinentPosition = new Vector3(4.0f, -2.457f, -10);
             }
             if (Africa.collider != null){
+                DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                ContinentPosition = new Vector3(.509f, -.759f, -10);
             }
         }
     }

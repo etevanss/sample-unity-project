@@ -9,6 +9,7 @@ public class YearAndEvents : MonoBehaviour
     public GameObject globalEventPanel;
     public GameObject topLeftPanel;
 	public GameObject store;
+    //public GameObject fadeOutPanel;
 
     public Text yearText;
     public float yearFloat = 1800;
@@ -34,6 +35,7 @@ public class YearAndEvents : MonoBehaviour
         btn.onClick.AddListener(TaskOnClick);
 
         globalEventPanel.SetActive(false);
+        
 
         StartCoroutine(OpenGlobalEventPanel());
 
@@ -67,6 +69,18 @@ public class YearAndEvents : MonoBehaviour
         } else {
             UpdateYearUI();
         }
+
+        /*
+        if(yearFloat == 1805){
+            Debug.Log("wtf");
+            Color color = fadeOutPanel.GetComponent<MeshRenderer>().material.color;
+            while(color.a < 1){
+                color.a += 0.5f;
+                fadeOutPanel.GetComponent<MeshRenderer>().material.color = color;
+            }
+        }
+        */
+        
 
     }
 
