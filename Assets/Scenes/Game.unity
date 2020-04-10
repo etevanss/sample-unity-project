@@ -4332,3 +4332,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 207555d7dd14149fa930bb6e1d377df3, type: 3}
+--- !u!1 &6408199301194938773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6408199299598947573, guid: 207555d7dd14149fa930bb6e1d377df3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6408199301194938772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6408199301194938774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7090906651475804440, guid: 207555d7dd14149fa930bb6e1d377df3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6408199301194938772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6408199301194938775 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2069832440992525784, guid: 207555d7dd14149fa930bb6e1d377df3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6408199301194938772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6408199301194938776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7266421155836913293, guid: 207555d7dd14149fa930bb6e1d377df3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6408199301194938772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6408199301194938777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6408199300229993356, guid: 207555d7dd14149fa930bb6e1d377df3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6408199301194938772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6408199301194938778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6408199300428771831, guid: 207555d7dd14149fa930bb6e1d377df3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6408199301194938772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6408199301194938779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6408199301194938778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 994b3ae26fb2b1f4c86a8a7be5896430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  africa: {fileID: 6408199301194938777}
+  north: {fileID: 6408199301194938775}
+  south: {fileID: 6408199301194938773}
+  aus: {fileID: 6408199301194938776}
+  eur: {fileID: 6408199301194938774}

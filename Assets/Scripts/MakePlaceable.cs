@@ -22,8 +22,25 @@ public class MakePlaceable : MonoBehaviour
 
     void Start()
     {
-
+      DrawBoundaries();
     }
+
+    void DrawBoundaries(){
+      GameObject[] Boundaries = GameObject.FindGameObjectsWithTag ("Boundary");
+      foreach(GameObject bound in Boundaries) {
+        Debug.Log(Boundaries.Length);
+        SpriteRenderer sr = bound.GetComponent<SpriteRenderer>();
+        sr.enabled = true;
+    }
+  }
+    void EraseBoundaries(){
+      GameObject[] Boundaries = GameObject.FindGameObjectsWithTag ("Boundary");
+      foreach(GameObject bound in Boundaries) {
+        Debug.Log(Boundaries.Length);
+        SpriteRenderer sr = bound.GetComponent<SpriteRenderer>();
+        sr.enabled = false;
+    }
+  }
     void UpdateCount(){
       GameObject MoneyListener = GameObject.Find("Money Listener");
       Money moneyScript = MoneyListener.GetComponent<Money>();
@@ -69,6 +86,7 @@ public class MakePlaceable : MonoBehaviour
 
                 Instantiate(finalObject, transform.position, Quaternion.identity);
                 //create final object, at mouse position, maintain rotation
+                DrawBoundaries();
                 UpdateCount();
 
               }
@@ -78,6 +96,7 @@ public class MakePlaceable : MonoBehaviour
         } else if (Input.GetMouseButtonDown(1)) { //right click
           Destroy(this.gameObject); //remove spawner from mouse
            Cursor.visible = true;
+           EraseBoundaries();
         }
 
     }

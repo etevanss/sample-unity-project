@@ -17,6 +17,8 @@ public class SelectContinent : MonoBehaviour
   private LayerMask AUSTRALIALayer;
   public Vector3 ContinentPosition;
   private Vector3 mousePos;
+  public string SelectedContinent;
+  private bool HaveSelected = false;
 
     // Update is called once per frame
     private void PlayGame()
@@ -38,31 +40,41 @@ public class SelectContinent : MonoBehaviour
             RaycastHit2D South = Physics2D.Raycast(mousePos,Vector2.zero, Mathf.Infinity,SOUTHAMERICALayer);
             RaycastHit2D Australia = Physics2D.Raycast(mousePos,Vector2.zero, Mathf.Infinity,AUSTRALIALayer);
 
-            if (Eurasia.collider != null){
+            if (Eurasia.collider != null && !(HaveSelected)){
               Debug.Log("here");
                 DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 ContinentPosition = new Vector3(3.856f, 1.666f, -10.0f);
+                SelectedContinent = "Eurasia";
+                HaveSelected = true;
             }
-            if (North.collider != null){
+            if (North.collider != null && !(HaveSelected)){
                 DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 ContinentPosition = new Vector3(-4.0f, 1.360f, -10);
+                SelectedContinent = "North";
+                HaveSelected = true;
             }
-            if (South.collider != null){
+            if (South.collider != null && !(HaveSelected)){
                 DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 ContinentPosition = new Vector3(-3.445f, -2.309f, -10);
+                SelectedContinent = "South";
+                HaveSelected = true;
             }
-            if (Australia.collider != null){
+            if (Australia.collider != null && !(HaveSelected)){
                 DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 ContinentPosition = new Vector3(4.0f, -2.457f, -10);
+                SelectedContinent = "Australia";
+                HaveSelected = true;
             }
-            if (Africa.collider != null){
+            if (Africa.collider != null && !(HaveSelected)){
                 DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 ContinentPosition = new Vector3(.509f, -.759f, -10);
+                SelectedContinent = "Africa";
+                HaveSelected = true;
             }
         }
     }

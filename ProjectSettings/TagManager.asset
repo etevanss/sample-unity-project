@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - FactorySpawner
+  - Boundary
   layers:
   - Default
   - TransparentFX
