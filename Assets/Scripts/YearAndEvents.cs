@@ -8,7 +8,7 @@ public class YearAndEvents : MonoBehaviour
 
     public GameObject globalEventPanel;
     public GameObject topLeftPanel;
-	public GameObject store;
+	  public GameObject store;
     //public GameObject fadeOutPanel;
 
     public Text yearText;
@@ -35,7 +35,7 @@ public class YearAndEvents : MonoBehaviour
         btn.onClick.AddListener(TaskOnClick);
 
         globalEventPanel.SetActive(false);
-        
+
 
         StartCoroutine(OpenGlobalEventPanel());
 
@@ -80,7 +80,7 @@ public class YearAndEvents : MonoBehaviour
             }
         }
         */
-        
+
 
     }
 
@@ -113,7 +113,7 @@ public class YearAndEvents : MonoBehaviour
         topLeftPanel.SetActive(true);
 		store.SetActive(true);
     }
-    
+
     public void YearInc(){
         year++;
         yearText.text = "" + year;
