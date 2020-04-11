@@ -40,6 +40,22 @@ public class Continents : MonoBehaviour
 
     }
 
+    public void ActivateAfrica(){
+      africa.layer = LayerMask.NameToLayer("BG");
+    }
+    public void ActivateNorth(){
+      north.layer = LayerMask.NameToLayer("BG");
+    }
+    public void ActivateSouth(){
+      south.layer = LayerMask.NameToLayer("BG");
+    }
+    public void ActivateEur(){
+      eur.layer = LayerMask.NameToLayer("BG");
+    }
+    public void ActivateAus(){
+      aus.layer = LayerMask.NameToLayer("BG");
+    }
+
     // Update is called once per frame
     void Update()
     {
