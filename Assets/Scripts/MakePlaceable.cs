@@ -19,6 +19,7 @@ public class MakePlaceable : MonoBehaviour
     private string linkedCount;
 
     public int price;
+    private bool placeable = true;
 
     void Start()
     {
@@ -54,7 +55,28 @@ public class MakePlaceable : MonoBehaviour
         moneyScript.Wood++;
       }
     }
-    // Update is called once per frame
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("HERE");
+        placeable = false;
+      //  Destroy(gameObject);
+        Transform tf = gameObject.transform;
+        Transform circle = tf.Find("Circle");
+        SpriteRenderer sr = circle.GetComponent<SpriteRenderer>();
+        sr.color = new Color(1f, 0f, 0f, 1f);
+
+    }
+    private void OnTriggerExit2D(Collider2D other){
+      Debug.Log("THERE");
+      placeable= true;
+      Transform tf = gameObject.transform;
+      Transform circle = tf.Find("Circle");
+      SpriteRenderer sr = circle.GetComponent<SpriteRenderer>();
+      sr.color = new Color(1f, 1f, 1f, 1f);
+    }
+
+
     void Update()
     {
 
@@ -77,19 +99,19 @@ public class MakePlaceable : MonoBehaviour
           //is mouse on icon
 
 
-          if(iconHit.collider == null && landHit.collider != null && moneyScript.CurrencyF >= price) {
+          if(placeable && landHit.collider != null && moneyScript.CurrencyF >= price) {
               moneyScript.CurrencyF -= price;
               moneyScript.Currency.text = "" + moneyScript.CurrencyF;
 
 
-              if (iconHit.collider == null && landHit.collider != null) {
+
 
                 Instantiate(finalObject, transform.position, Quaternion.identity);
                 //create final object, at mouse position, maintain rotation
                 DrawBoundaries();
                 UpdateCount();
 
-              }
+              
 
           }
 
