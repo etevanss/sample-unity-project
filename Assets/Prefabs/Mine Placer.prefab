@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 1615885203495522768}
   - component: {fileID: 6078095339214095915}
   - component: {fileID: 8034489503132080173}
+  - component: {fileID: 1288212277}
   m_Layer: 9
   m_Name: Mine Placer
   m_TagString: FactorySpawner
@@ -186,3 +187,19 @@ MonoBehaviour:
     m_Bits: 512
   linkedCount: Mines
   price: 5
+--- !u!58 &1288212277
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8674042007818705650}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.522119
