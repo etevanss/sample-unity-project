@@ -15,7 +15,8 @@ public class OpenAccessPacks : MonoBehaviour
     }
 
     public void ShowAccessPacks(){
-        status = !status;
+        
         buyMoreTab.SetActive(status);
+        status = !status;
     }
 }

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class YearAndEvents : MonoBehaviour
 {
 
     public GameObject globalEventPanel;
     public GameObject topLeftPanel;
-	  public GameObject store;
+	public GameObject store;
     //public GameObject fadeOutPanel;
 
     public Text yearText;
@@ -22,6 +23,9 @@ public class YearAndEvents : MonoBehaviour
     public Text eventTitle;
     public Text eventBodyText;
 
+    public Text percent;
+    
+
     List<string> earlyGameTitleList = new List<string>();
     List<string> earlyGameDescList = new List<string>();
     List<string> lateGameTitleList = new List<string>();
@@ -31,6 +35,7 @@ public class YearAndEvents : MonoBehaviour
 
     void Start()
     {
+
         Button btn = fastForwardButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
 
@@ -70,16 +75,14 @@ public class YearAndEvents : MonoBehaviour
             UpdateYearUI();
         }
 
-        /*
-        if(yearFloat == 1805){
-            Debug.Log("wtf");
-            Color color = fadeOutPanel.GetComponent<MeshRenderer>().material.color;
-            while(color.a < 1){
-                color.a += 0.5f;
-                fadeOutPanel.GetComponent<MeshRenderer>().material.color = color;
-            }
+        GameObject percent = GameObject.Find("Percent");
+        PercentIndustrialized percentScript = percent.GetComponent<PercentIndustrialized>();
+        if(year == 2100 || percentScript.percentF >= 100.0){ // ends game at year 2100 or if world fully industrialized
+            Time.timeScale = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            Cursor.visible = true;
         }
-        */
+        
 
 
     }
