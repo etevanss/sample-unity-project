@@ -157,7 +157,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -263,6 +263,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16384
   ContinentPosition: {x: 0, y: 0, z: 0}
+  SelectedContinent: 
 --- !u!1001 &1047361817
 PrefabInstance:
   m_ObjectHideFlags: 0
