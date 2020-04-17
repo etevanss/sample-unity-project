@@ -10,6 +10,9 @@ public class YearAndEvents : MonoBehaviour
     public GameObject globalEventPanel;
     public GameObject topLeftPanel;
 	public GameObject store;
+    public GameObject progressBars;
+    public GameObject newsPanel;
+    public GameObject newsLogPanel;
     //public GameObject fadeOutPanel;
 
     public Text yearText;
@@ -23,7 +26,10 @@ public class YearAndEvents : MonoBehaviour
     public Text eventTitle;
     public Text eventBodyText;
 
-    public Text percent;
+    public Text newsLogText;
+    //public Text percent;
+
+    
     
 
     List<string> earlyGameTitleList = new List<string>();
@@ -44,6 +50,7 @@ public class YearAndEvents : MonoBehaviour
 
         StartCoroutine(OpenGlobalEventPanel());
 
+        // EARLY GAME EVENTS (before 1950)
         earlyGameTitleList.Add("A world war has erupted!");
         earlyGameTitleList.Add("Efficient railway systems have been deployed");
         earlyGameTitleList.Add("A global pandemic has ravaged industry worldwide");
@@ -58,12 +65,20 @@ public class YearAndEvents : MonoBehaviour
         earlyGameDescList.Add("All industries benefit from this invention by increasing production. Keep rolling in the money!");
         earlyGameDescList.Add("Logging facilities, fisheries, and mines will now produce more money. Happy trucking!");
 
-
+        // LATE GAME EVENTS (after 1950)
         lateGameTitleList.Add("Overfishing and pollution continue to decimate fisheries");
         lateGameTitleList.Add("Hot, dry climate results in global forest fires");
+        lateGameTitleList.Add("Global climate change has shifted optimal harvesting periods");
+        lateGameTitleList.Add("Severe air pollution has increased respiratory illness prevalence worldwide");
+        lateGameTitleList.Add("Rapid industrial pollution causes overuse of natural resources");
+        lateGameTitleList.Add("Soil pollution has severely stunted the growth of agriculture and food industries");
 
         lateGameDescList.Add("Salmon, scad, and lobster have become globally extinct due to overfishing and polluted ecosystems. All fisheries have gone out of operation.");
         lateGameDescList.Add("Forest fires across the world have stunted the logging industry. All logging industries have gone out of operation.");
+        lateGameDescList.Add("Crops now have shorter harvesting periods due to climate changes. All farming industries will produce less money.");
+        lateGameDescList.Add("Hospitals are filled with immunocomprimised patients and thus productivity decreased. All industries will produce less money.");
+        lateGameDescList.Add("Resources are now more scarce. All industries will cost more money to place.");
+        lateGameDescList.Add("Food and farming are now far more scarce and valued. All industries will produce less money and farms will cost more money to place.");
     }
 
     void Update()
@@ -94,6 +109,9 @@ public class YearAndEvents : MonoBehaviour
             globalEventPanel.SetActive(true);
             topLeftPanel.SetActive(false);
             store.SetActive(false);
+            progressBars.SetActive(false);
+            newsPanel.SetActive(false);
+            newsLogPanel.SetActive(false);
             Time.timeScale = 0;
             EditGlobalEventDesc();
         }
@@ -105,6 +123,8 @@ public class YearAndEvents : MonoBehaviour
         eventTitle.text = earlyGameTitleList[randNum];
         eventBodyText.text = earlyGameDescList[randNum];
 
+        newsLogText.text += "\n" + year + ": " + earlyGameTitleList[randNum] + "\n";
+
         earlyGameTitleList.RemoveAt(randNum);
         earlyGameDescList.RemoveAt(randNum);
     }
@@ -115,6 +135,8 @@ public class YearAndEvents : MonoBehaviour
         globalEventPanel.SetActive(false);
         topLeftPanel.SetActive(true);
 		store.SetActive(true);
+        progressBars.SetActive(true);
+        newsPanel.SetActive(true);
     }
 
     public void YearInc(){
