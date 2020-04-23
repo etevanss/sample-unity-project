@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class PercentIndustrialized : MonoBehaviour
 {
+    public Slider industrialized;
     public Text percent;
     public float percentF;
 
     void Start()
     {
-
+        industrialized.value = 0;
     }
 
     void Update()
@@ -18,7 +19,8 @@ public class PercentIndustrialized : MonoBehaviour
       GameObject MoneyListener = GameObject.Find("Money Listener");
       Money moneyScript = MoneyListener.GetComponent<Money>();
       percentF = moneyScript.Factories * 2 + moneyScript.Fish * 4/3 + moneyScript.Mines * 4/3 + moneyScript.Wood * 4/3;
+      industrialized.value = percentF;
       percent.text = "" + percentF;
-
+      
     }
 }
