@@ -46,3 +46,6 @@ TagManager:
   - name: Top
     uniqueID: 3718706509
     locked: 0
+  - name: Locks
+    uniqueID: 982972975
+    locked: 0

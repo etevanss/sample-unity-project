@@ -15,12 +15,25 @@ public class Continents : MonoBehaviour
     [SerializeField]
     private GameObject eur;
 
+    public GameObject africaLock;
+    public GameObject northLock;
+    public GameObject southLock;
+    public GameObject ausLock;
+    public GameObject eurLock;
+
+
     private string SelectedContinent;
     void Start()
     {
       GameObject Cam = GameObject.Find("ContinentListeners");
       SelectContinent continentScript = Cam.GetComponent<SelectContinent>();
       SelectedContinent = continentScript.SelectedContinent;
+
+      africaLock.SetActive(true);
+      northLock.SetActive(true);
+      southLock.SetActive(true);
+      ausLock.SetActive(true);
+      eurLock.SetActive(true);
 
       if(SelectedContinent != "Africa") {
         africa.layer = LayerMask.NameToLayer("AFRICA");
@@ -40,26 +53,33 @@ public class Continents : MonoBehaviour
 
       if(SelectedContinent == "Africa") {
         ActivateAfrica();
+        africaLock.SetActive(false);
       }
       if(SelectedContinent == "North") {
         ActivateNorth();
+        northLock.SetActive(false);
       }
       if(SelectedContinent == "South") {
         ActivateSouth();
+        southLock.SetActive(false);
       }
       if(SelectedContinent == "Australia") {
         ActivateAus();
+        ausLock.SetActive(false);
       }
       if(SelectedContinent == "Eurasia") {
         ActivateEur();
+        eurLock.SetActive(false);
       }
 
     }
 
     public void ActivateAfrica(){
+      Debug.Log("lock pressed");
       africa.layer = LayerMask.NameToLayer("BG");
       GameObject Boundary = GameObject.Find("Africa Boundary");
       Destroy(Boundary);
+      africaLock.SetActive(false);
     }
     public void ActivateNorth(){
       north.layer = LayerMask.NameToLayer("BG");
