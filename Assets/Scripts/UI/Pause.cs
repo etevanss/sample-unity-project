@@ -28,6 +28,7 @@ public class Pause : MonoBehaviour
         currentCurrencyPanel.SetActive(false);
         marketButton.SetActive(false);
         industrializedProgress.SetActive(false);
+        gameObject.GetComponent<AudioSource>().Stop();
         Time.timeScale = 0;
     }
 
@@ -35,12 +36,13 @@ public class Pause : MonoBehaviour
     {
         pausePanel.SetActive(false);
         topLeftPanel.SetActive(true);
-		store.SetActive(true);
+		//store.SetActive(true);
         progressBars.SetActive(true);
         newsPanel.SetActive(true);
         currentCurrencyPanel.SetActive(true);
         marketButton.SetActive(true);
         industrializedProgress.SetActive(true);
+        gameObject.GetComponent<AudioSource>().Play();
         Time.timeScale = 1;
     }
 }
