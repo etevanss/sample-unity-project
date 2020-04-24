@@ -10,6 +10,9 @@ public class Pause : MonoBehaviour
     public GameObject progressBars;
     public GameObject newsPanel;
     public GameObject newsLogPanel;
+    public GameObject currentCurrencyPanel;
+    public GameObject marketButton;
+    public GameObject industrializedProgress;
 
     public void Start(){
         ResumeGame();
@@ -22,6 +25,9 @@ public class Pause : MonoBehaviour
         progressBars.SetActive(false);
         newsPanel.SetActive(false);
         newsLogPanel.SetActive(false);
+        currentCurrencyPanel.SetActive(false);
+        marketButton.SetActive(false);
+        industrializedProgress.SetActive(false);
         Time.timeScale = 0;
     }
 
@@ -32,6 +38,9 @@ public class Pause : MonoBehaviour
 		store.SetActive(true);
         progressBars.SetActive(true);
         newsPanel.SetActive(true);
+        currentCurrencyPanel.SetActive(true);
+        marketButton.SetActive(true);
+        industrializedProgress.SetActive(true);
         Time.timeScale = 1;
     }
 }
