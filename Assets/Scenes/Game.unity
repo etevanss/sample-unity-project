@@ -527,7 +527,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 388293245}
   m_Direction: 2
   m_Value: 0.9962882
-  m_Size: 0.44804642
+  m_Size: 0.4480464
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2641,7 +2641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 481740858}
   - component: {fileID: 481740859}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: LockImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6407,7 +6407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.5, y: -192.97}
+  m_AnchoredPosition: {x: -12.5, y: -181.74005}
   m_SizeDelta: {x: 450.3, y: 78.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1494348615
@@ -6685,7 +6685,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -57.515, y: 155.2}
+  m_AnchoredPosition: {x: -57.515, y: 153.3}
   m_SizeDelta: {x: 100.54, y: 19.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1548758355

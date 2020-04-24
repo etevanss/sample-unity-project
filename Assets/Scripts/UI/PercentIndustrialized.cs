@@ -11,7 +11,6 @@ public class PercentIndustrialized : MonoBehaviour
 
     void Start()
     {
-        industrialized.value = 0;
     }
 
     void Update()
