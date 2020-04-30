@@ -33,7 +33,7 @@ public class EconomicStability : MonoBehaviour
       Debug.Log(avgDiff);
 
 
-      economicStabilityF = 100 - (avgDiff * 2);
+      economicStabilityF = 100 - (avgDiff * 5/2);
       esSlider.value = economicStabilityF;
       economicStability.text = "" + economicStabilityF;
       
