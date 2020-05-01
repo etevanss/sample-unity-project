@@ -14,7 +14,7 @@ public class CameraZoomController : MonoBehaviour
 
     void Start()
     {
-        ResetCamera = 5.7f;
+        ResetCamera = 11f;
         cam = Camera.main;
         targetZoom = cam.orthographicSize;
     }
@@ -27,7 +27,7 @@ public class CameraZoomController : MonoBehaviour
         scrollData = Input.GetAxis("Mouse ScrollWheel");
         targetZoom -= (scrollData * zoomFactor);
         //Clamp prevents camera from zooming way too far in and way too far out
-        targetZoom = Mathf.Clamp(targetZoom, 2.5f, 5.75f);
+        targetZoom = Mathf.Clamp(targetZoom, 7.4f, 11.5f);
         //Lerp is just linear interpolation and gets a point within a given distance 
         //between the starting position and ending position
         //in this case orthographic size and the target zoom
