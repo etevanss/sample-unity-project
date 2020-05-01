@@ -17,34 +17,47 @@ public class Money : MonoBehaviour
     public Text fishPrice;
     public float fishF;
     public float fishRound;
+    public int fishP = 5;
 
     public Text woodPrice;
     public float woodF;
     public float woodRound;
+    public int woodP = 5;
 
     public Text factoryPrice;
     public float factoryF;
     public float factoryRound;
+    public int factoryP = 20;
 
     public Text minePrice;
     public float mineF;
     public float mineRound;
+    public int mineP = 5;
 
 
 
     void Start()
     {
 
-      fishPrice.text = "" + 5;
-      woodPrice.text = "" + 5;
-      factoryPrice.text = "" + 20;
-      minePrice.text = "" + 5;
+      ScreenUpdatePrices();
 
       CurrencyF = 5;
       CurrencyRound = Mathf.RoundToInt(CurrencyF);
       Currency.text = "" + CurrencyRound;
     }
 
+    public void ScreenUpdatePrices(){
+      fishPrice.text = "" + fishP;
+      woodPrice.text = "" + woodP;
+      factoryPrice.text = "" + factoryP;
+      minePrice.text = "" + mineP;
+    }
+    public void MultiplyPriceChange(float fac, float min, float log, float fis){
+      factoryP = (int)(factoryP * fac);
+      mineP = (int)(mineP * min);
+      woodP = (int)(woodP * log);
+      fishP = (int)(fishP * fis);
+    }
     void FixedUpdate()
     {
         CurrencyF += Factories / 50;

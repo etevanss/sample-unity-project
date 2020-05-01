@@ -9593,15 +9593,19 @@ MonoBehaviour:
   fishPrice: {fileID: 1405822958}
   fishF: 0
   fishRound: 0
+  fishP: 5
   woodPrice: {fileID: 948526769}
   woodF: 0
   woodRound: 0
+  woodP: 5
   factoryPrice: {fileID: 1973767005}
   factoryF: 0
   factoryRound: 0
+  factoryP: 20
   minePrice: {fileID: 1839836955}
   mineF: 0
   mineRound: 0
+  mineP: 5
 --- !u!1 &2131921794
 GameObject:
   m_ObjectHideFlags: 0

@@ -98,22 +98,51 @@ public class MakePlaceable : MonoBehaviour
           RaycastHit2D iconHit = Physics2D.Raycast(mousePos,Vector2.zero, Mathf.Infinity,ICONLayer);
           //is mouse on icon
 
+          if(placeable && landHit.collider != null){
 
-          if(placeable && landHit.collider != null && moneyScript.CurrencyF >= price) {
-              moneyScript.CurrencyF -= price;
+            if (finalObject.name == "Factory Instance" && moneyScript.CurrencyF >= moneyScript.factoryP) {
+              moneyScript.CurrencyF -= moneyScript.factoryP;
               moneyScript.Currency.text = "" + moneyScript.CurrencyF;
+              Instantiate(finalObject, transform.position, Quaternion.identity);
+              //create final object, at mouse position, maintain rotation
+              DrawBoundaries();
+              UpdateCount();
+              moneyScript.MultiplyPriceChange(1.5f,1.0f,1.0f,1.0f);
+              moneyScript.ScreenUpdatePrices();
 
+            } else if (finalObject.name == "Fish Instance" && moneyScript.CurrencyF >= moneyScript.fishP) {
+              moneyScript.CurrencyF -= moneyScript.fishP;
+              moneyScript.Currency.text = "" + moneyScript.CurrencyF;
+              Instantiate(finalObject, transform.position, Quaternion.identity);
 
+              DrawBoundaries();
+              UpdateCount();
+              moneyScript.MultiplyPriceChange(1.0f,1.0f,1.0f,1.5f);
+              moneyScript.ScreenUpdatePrices();
 
+            } else if (finalObject.name == "Log Instance" && moneyScript.CurrencyF >= moneyScript.woodP) {
+              moneyScript.CurrencyF -= moneyScript.woodP;
+              moneyScript.Currency.text = "" + moneyScript.CurrencyF;
+              Instantiate(finalObject, transform.position, Quaternion.identity);
 
-                Instantiate(finalObject, transform.position, Quaternion.identity);
-                //create final object, at mouse position, maintain rotation
-                DrawBoundaries();
-                UpdateCount();
+              DrawBoundaries();
+              UpdateCount();
+              moneyScript.MultiplyPriceChange(1.0f,1.0f,1.5f,1.0f);
+              moneyScript.ScreenUpdatePrices();
 
-              
+            } else if (finalObject.name == "Mine Instance" && moneyScript.CurrencyF >= moneyScript.mineP) {
+              moneyScript.CurrencyF -= moneyScript.mineP;
+              moneyScript.Currency.text = "" + moneyScript.CurrencyF;
+              Instantiate(finalObject, transform.position, Quaternion.identity);
+
+              DrawBoundaries();
+              UpdateCount();
+              moneyScript.MultiplyPriceChange(1.0f,1.5f,1.0f,1.0f);
+              moneyScript.ScreenUpdatePrices();
+            }
 
           }
+
 
         } else if (Input.GetMouseButtonDown(1)) { //right click
           Destroy(this.gameObject); //remove spawner from mouse

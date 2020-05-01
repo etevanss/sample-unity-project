@@ -9,7 +9,7 @@ public class YearAndEvents : MonoBehaviour
 
     public GameObject globalEventPanel;
     public GameObject topLeftPanel;
-	public GameObject store;
+	  public GameObject store;
     public GameObject progressBars;
     public GameObject newsPanel;
     public GameObject newsLogPanel;
@@ -29,8 +29,8 @@ public class YearAndEvents : MonoBehaviour
     public Text newsLogText;
     //public Text percent;
 
-    
-    
+
+
 
     List<string> earlyGameTitleList = new List<string>();
     List<string> earlyGameDescList = new List<string>();
@@ -97,7 +97,7 @@ public class YearAndEvents : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
             Cursor.visible = true;
         }
-        
+
 
 
     }
