@@ -58,7 +58,7 @@ public class MakePlaceable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("HERE");
+        //Debug.Log("HERE");
         placeable = false;
       //  Destroy(gameObject);
         Transform tf = gameObject.transform;
@@ -68,7 +68,7 @@ public class MakePlaceable : MonoBehaviour
 
     }
     private void OnTriggerExit2D(Collider2D other){
-      Debug.Log("THERE");
+      //Debug.Log("THERE");
       placeable= true;
       Transform tf = gameObject.transform;
       Transform circle = tf.Find("Circle");
@@ -107,7 +107,7 @@ public class MakePlaceable : MonoBehaviour
               //create final object, at mouse position, maintain rotation
               DrawBoundaries();
               UpdateCount();
-              moneyScript.MultiplyPriceChange(1.5f,1.0f,1.0f,1.0f);
+              moneyScript.MultiplyPriceChange(1.25f,1.0f,1.0f,1.0f);
               moneyScript.ScreenUpdatePrices();
 
             } else if (finalObject.name == "Fish Instance" && moneyScript.CurrencyF >= moneyScript.fishP) {
@@ -117,7 +117,7 @@ public class MakePlaceable : MonoBehaviour
 
               DrawBoundaries();
               UpdateCount();
-              moneyScript.MultiplyPriceChange(1.0f,1.0f,1.0f,1.5f);
+              moneyScript.MultiplyPriceChange(1.0f,1.0f,1.0f,1.25f);
               moneyScript.ScreenUpdatePrices();
 
             } else if (finalObject.name == "Log Instance" && moneyScript.CurrencyF >= moneyScript.woodP) {
@@ -127,7 +127,7 @@ public class MakePlaceable : MonoBehaviour
 
               DrawBoundaries();
               UpdateCount();
-              moneyScript.MultiplyPriceChange(1.0f,1.0f,1.5f,1.0f);
+              moneyScript.MultiplyPriceChange(1.0f,1.0f,1.25f,1.0f);
               moneyScript.ScreenUpdatePrices();
 
             } else if (finalObject.name == "Mine Instance" && moneyScript.CurrencyF >= moneyScript.mineP) {
@@ -137,7 +137,7 @@ public class MakePlaceable : MonoBehaviour
 
               DrawBoundaries();
               UpdateCount();
-              moneyScript.MultiplyPriceChange(1.0f,1.5f,1.0f,1.0f);
+              moneyScript.MultiplyPriceChange(1.0f,1.25f,1.0f,1.0f);
               moneyScript.ScreenUpdatePrices();
             }
 

@@ -97,14 +97,12 @@ public class YearAndEvents : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
             Cursor.visible = true;
         }
-
-
-
     }
 
     IEnumerator OpenGlobalEventPanel(){
         while(yearFloat <= 2100){
             yield return new WaitForSeconds(Random.Range(30, 50));
+            //yield return new WaitForSeconds(5);
 
             globalEventPanel.SetActive(true);
             topLeftPanel.SetActive(false);
@@ -118,15 +116,40 @@ public class YearAndEvents : MonoBehaviour
     }
 
     void EditGlobalEventDesc(){
+
+        GameObject MoneyListener = GameObject.Find("Money Listener");
+        Money moneyScript = MoneyListener.GetComponent<Money>();
+
         int randNum = Random.Range(0, earlyGameTitleList.Count);
+        //int randNum = 0;
 
         eventTitle.text = earlyGameTitleList[randNum];
         eventBodyText.text = earlyGameDescList[randNum];
 
         newsLogText.text += "\n" + year + ": " + earlyGameTitleList[randNum] + "\n";
 
-        earlyGameTitleList.RemoveAt(randNum);
-        earlyGameDescList.RemoveAt(randNum);
+        if(earlyGameTitleList[randNum].IndexOf("A world war has erupted!") >= 0){
+            moneyScript.MultiplyPriceChange(2.0f, 2.0f, 2.0f, 2.0f);
+            moneyScript.ScreenUpdatePrices();
+        } else if(earlyGameTitleList[randNum].IndexOf("Efficient railway systems have been deployed") >= 0){
+            moneyScript.MultiplyPriceChange(1.0f, 0.5f, 1.0f, 1.0f);
+            moneyScript.ScreenUpdatePrices();
+        } else if(earlyGameTitleList[randNum].IndexOf("A global pandemic has ravaged industry worldwide") >= 0){
+            moneyScript.MultiplyPriceChange(1.0f, 1.0f, 1.0f, 1.0f);
+            moneyScript.ScreenUpdatePrices();
+        } else if(earlyGameTitleList[randNum].IndexOf("The world has entered an economic depression") >= 0){
+            moneyScript.MultiplyPriceChange(3.0f, 3.0f, 3.0f, 3.0f);
+            moneyScript.ScreenUpdatePrices();
+        } else if(earlyGameTitleList[randNum].IndexOf("The assembly line takes the world by storm!") >= 0){
+            moneyScript.MultiplyPriceChange(0.75f, 0.75f, 0.75f, 0.75f);
+            moneyScript.ScreenUpdatePrices();
+        } else if(earlyGameTitleList[randNum].IndexOf("The commercial shipping container revolutionizes industry") >= 0){
+            moneyScript.MultiplyPriceChange(2.0f, 2.0f, 2.0f, 2.0f);
+            moneyScript.ScreenUpdatePrices();
+        }
+
+        //earlyGameTitleList.RemoveAt(randNum);
+        //earlyGameDescList.RemoveAt(randNum);
     }
 
     public void ExitPopUp()
