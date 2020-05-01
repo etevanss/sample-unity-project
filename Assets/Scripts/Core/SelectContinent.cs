@@ -44,35 +44,35 @@ public class SelectContinent : MonoBehaviour
               Debug.Log("here");
                 DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                ContinentPosition = new Vector3(3.856f, 1.666f, -10.0f);
+                ContinentPosition = new Vector3(8f, 3f, -10.0f);
                 SelectedContinent = "Eurasia";
                 HaveSelected = true;
             }
             if (North.collider != null && !(HaveSelected)){
                 DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                ContinentPosition = new Vector3(-4.0f, 1.360f, -10);
+                ContinentPosition = new Vector3(-8.0f, 2.8f, -10);
                 SelectedContinent = "North";
                 HaveSelected = true;
             }
             if (South.collider != null && !(HaveSelected)){
                 DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                ContinentPosition = new Vector3(-3.445f, -2.309f, -10);
+                ContinentPosition = new Vector3(-8f, -6.14f, -10);
                 SelectedContinent = "South";
                 HaveSelected = true;
             }
             if (Australia.collider != null && !(HaveSelected)){
                 DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                ContinentPosition = new Vector3(4.0f, -2.457f, -10);
+                ContinentPosition = new Vector3(8f, -6.5f, -10);
                 SelectedContinent = "Australia";
                 HaveSelected = true;
             }
             if (Africa.collider != null && !(HaveSelected)){
                 DontDestroyOnLoad(this);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                ContinentPosition = new Vector3(.509f, -.759f, -10);
+                ContinentPosition = new Vector3(1.7f, -2.6f, -10);
                 SelectedContinent = "Africa";
                 HaveSelected = true;
             }
