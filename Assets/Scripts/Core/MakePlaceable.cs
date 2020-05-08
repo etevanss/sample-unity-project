@@ -107,7 +107,7 @@ public class MakePlaceable : MonoBehaviour
               //create final object, at mouse position, maintain rotation
               DrawBoundaries();
               UpdateCount();
-              moneyScript.MultiplyPriceChange(1.25f,1.0f,1.0f,1.0f);
+              moneyScript.MultiplyPriceChange(1.05f,1.0f,1.0f,1.0f);
               moneyScript.ScreenUpdatePrices();
 
             } else if (finalObject.name == "Fish Instance" && moneyScript.CurrencyF >= moneyScript.fishP) {
@@ -117,7 +117,7 @@ public class MakePlaceable : MonoBehaviour
 
               DrawBoundaries();
               UpdateCount();
-              moneyScript.MultiplyPriceChange(1.0f,1.0f,1.0f,1.25f);
+              moneyScript.MultiplyPriceChange(1.0f,1.0f,1.0f,1.05f);
               moneyScript.ScreenUpdatePrices();
 
             } else if (finalObject.name == "Log Instance" && moneyScript.CurrencyF >= moneyScript.woodP) {
@@ -127,7 +127,7 @@ public class MakePlaceable : MonoBehaviour
 
               DrawBoundaries();
               UpdateCount();
-              moneyScript.MultiplyPriceChange(1.0f,1.0f,1.25f,1.0f);
+              moneyScript.MultiplyPriceChange(1.0f,1.0f,1.05f,1.0f);
               moneyScript.ScreenUpdatePrices();
 
             } else if (finalObject.name == "Mine Instance" && moneyScript.CurrencyF >= moneyScript.mineP) {
@@ -137,7 +137,7 @@ public class MakePlaceable : MonoBehaviour
 
               DrawBoundaries();
               UpdateCount();
-              moneyScript.MultiplyPriceChange(1.0f,1.25f,1.0f,1.0f);
+              moneyScript.MultiplyPriceChange(1.0f,1.05f,1.0f,1.0f);
               moneyScript.ScreenUpdatePrices();
             }
 
