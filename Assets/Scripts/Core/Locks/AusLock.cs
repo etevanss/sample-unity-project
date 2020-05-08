@@ -10,10 +10,16 @@ public class AusLock : MonoBehaviour
 
     }
     void OnMouseDown(){
-      GameObject ContinentsObj = GameObject.Find("Countries");
+        GameObject MoneyListener = GameObject.Find("Money Listener");
+        Money moneyScript = MoneyListener.GetComponent<Money>();
+        GameObject ContinentsObj = GameObject.Find("Countries");
       Continents Cont = ContinentsObj.GetComponent<Continents>();
-      Cont.ActivateAus();
-      Destroy(gameObject);
+        if (moneyScript.CurrencyF >= 1000)
+        {
+            moneyScript.CurrencyF -= 1000;
+            Cont.ActivateAus();
+            Destroy(gameObject);
+        }
     }
     // Update is called once per frame
     void Update()

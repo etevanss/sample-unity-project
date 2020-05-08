@@ -10,10 +10,15 @@ public class AfricaLock : MonoBehaviour
 
     }
     void OnMouseDown(){
+      GameObject MoneyListener = GameObject.Find("Money Listener");
+      Money moneyScript = MoneyListener.GetComponent<Money>();
       GameObject ContinentsObj = GameObject.Find("Countries");
       Continents Cont = ContinentsObj.GetComponent<Continents>();
-      Cont.ActivateAfrica();
-      Destroy(gameObject);
+      if(moneyScript.CurrencyF >= 1000){
+         moneyScript.CurrencyF -= 1000;
+         Cont.ActivateAfrica();
+         Destroy(gameObject);
+        }
     }
     // Update is called once per frame
     void Update()

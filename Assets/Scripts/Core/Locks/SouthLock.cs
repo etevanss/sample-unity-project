@@ -10,10 +10,16 @@ public class SouthLock : MonoBehaviour
 
     }
     void OnMouseDown(){
+      GameObject MoneyListener = GameObject.Find("Money Listener");
+      Money moneyScript = MoneyListener.GetComponent<Money>();
       GameObject ContinentsObj = GameObject.Find("Countries");
       Continents Cont = ContinentsObj.GetComponent<Continents>();
-      Cont.ActivateSouth();
-      Destroy(gameObject);
+        if (moneyScript.CurrencyF >= 1000)
+        {
+            moneyScript.CurrencyF -= 1000;
+            Cont.ActivateSouth();
+            Destroy(gameObject);
+        }
     }
     // Update is called once per frame
     void Update()

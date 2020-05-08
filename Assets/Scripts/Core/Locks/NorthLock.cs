@@ -10,10 +10,16 @@ public class NorthLock : MonoBehaviour
 
     }
     void OnMouseDown(){
+      GameObject MoneyListener = GameObject.Find("Money Listener");
+      Money moneyScript = MoneyListener.GetComponent<Money>();
       GameObject ContinentsObj = GameObject.Find("Countries");
       Continents Cont = ContinentsObj.GetComponent<Continents>();
-      Cont.ActivateNorth();
-      Destroy(gameObject);
+        if (moneyScript.CurrencyF >= 1000)
+        {
+            moneyScript.CurrencyF -= 1000;
+            Cont.ActivateNorth();
+            Destroy(gameObject);
+        }
     }
     // Update is called once per frame
     void Update()
