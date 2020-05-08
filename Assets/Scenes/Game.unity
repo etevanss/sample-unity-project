@@ -1323,7 +1323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 1}
   color2: {r: 0.39607844, g: 0.2627451, b: 0.12941177, a: 1}
-  duration: 500
+  duration: 550
   cam: {fileID: 0}
 --- !u!1 &264388259
 GameObject:
@@ -5084,7 +5084,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
