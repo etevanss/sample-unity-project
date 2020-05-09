@@ -63,17 +63,15 @@ public class YearAndEvents : MonoBehaviour
         earlyGameDescList.Add("All industries will produce less money until the pandemic has ended. Stay safe and wash your hands!");
         earlyGameDescList.Add("All industries will produce less money and cost more to place.");
         earlyGameDescList.Add("All industries benefit from this invention by increasing production. Keep rolling in the money!");
-        earlyGameDescList.Add("Logging facilities, fisheries, and mines will now produce more money. Happy trucking!");
+        earlyGameDescList.Add("Logging facilities, farms, and mines will now produce more money. Happy trucking!");
 
         // LATE GAME EVENTS (after 1950)
-        lateGameTitleList.Add("Overfishing and pollution continue to decimate fisheries");
         lateGameTitleList.Add("Hot, dry climate results in global forest fires");
         lateGameTitleList.Add("Global climate change has shifted optimal harvesting periods");
         lateGameTitleList.Add("Severe air pollution has increased respiratory illness prevalence worldwide");
         lateGameTitleList.Add("Rapid industrial pollution causes overuse of natural resources");
         lateGameTitleList.Add("Soil pollution has severely stunted the growth of agriculture and food industries");
 
-        lateGameDescList.Add("Salmon, scad, and lobster have become globally extinct due to overfishing and polluted ecosystems. All fisheries have gone out of operation.");
         lateGameDescList.Add("Forest fires across the world have stunted the logging industry. All logging industries have gone out of operation.");
         lateGameDescList.Add("Crops now have shorter harvesting periods due to climate changes. All farming industries will produce less money.");
         lateGameDescList.Add("Hospitals are filled with immunocomprimised patients and thus productivity decreased. All industries will produce less money.");
@@ -99,19 +97,20 @@ public class YearAndEvents : MonoBehaviour
         GameObject MoneyListener = GameObject.Find("Money Listener");
         Money moneyScript = MoneyListener.GetComponent<Money>();
 
-        Debug.Log(stabilityScript.economicStabilityF);
-
+        /*
         if(stabilityScript.economicStabilityF <= 90.0 || moneyScript.CurrencyF <= 0.0) {
             Time.timeScale = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
             Cursor.visible = true;
         }
+        */
 
         if(year == 2100 || percentScript.percentF >= 100.0){ // ends game at year 2100 or if world fully industrialized
             Time.timeScale = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
             Cursor.visible = true;
         }
+    
 
 
     }
@@ -144,25 +143,28 @@ public class YearAndEvents : MonoBehaviour
         eventBodyText.text = earlyGameDescList[randNum];
 
         newsLogText.text += "\n" + year + ": " + earlyGameTitleList[randNum] + "\n";
-
-        if(earlyGameTitleList[randNum].IndexOf("A world war has erupted!") >= 0){
-            moneyScript.MultiplyPriceChange(2.0f, 2.0f, 2.0f, 2.0f);
-            moneyScript.ScreenUpdatePrices();
-        } else if(earlyGameTitleList[randNum].IndexOf("Efficient railway systems have been deployed") >= 0){
-            moneyScript.MultiplyPriceChange(1.0f, 0.5f, 1.0f, 1.0f);
-            moneyScript.ScreenUpdatePrices();
-        } else if(earlyGameTitleList[randNum].IndexOf("A global pandemic has ravaged industry worldwide") >= 0){
-            moneyScript.MultiplyPriceChange(1.0f, 1.0f, 1.0f, 1.0f);
-            moneyScript.ScreenUpdatePrices();
-        } else if(earlyGameTitleList[randNum].IndexOf("The world has entered an economic depression") >= 0){
-            moneyScript.MultiplyPriceChange(3.0f, 3.0f, 3.0f, 3.0f);
-            moneyScript.ScreenUpdatePrices();
-        } else if(earlyGameTitleList[randNum].IndexOf("The assembly line takes the world by storm!") >= 0){
-            moneyScript.MultiplyPriceChange(0.75f, 0.75f, 0.75f, 0.75f);
-            moneyScript.ScreenUpdatePrices();
-        } else if(earlyGameTitleList[randNum].IndexOf("The commercial shipping container revolutionizes industry") >= 0){
-            moneyScript.MultiplyPriceChange(2.0f, 2.0f, 2.0f, 2.0f);
-            moneyScript.ScreenUpdatePrices();
+        if(year < 1950){
+            if(earlyGameTitleList[randNum].IndexOf("A world war has erupted!") >= 0){
+                moneyScript.MultiplyPriceChange(2.0f, 2.0f, 2.0f, 2.0f);
+                moneyScript.ScreenUpdatePrices();
+            } else if(earlyGameTitleList[randNum].IndexOf("Efficient railway systems have been deployed") >= 0){
+                moneyScript.MultiplyPriceChange(1.0f, 0.5f, 1.0f, 1.0f);
+                moneyScript.ScreenUpdatePrices();
+            } else if(earlyGameTitleList[randNum].IndexOf("A global pandemic has ravaged industry worldwide") >= 0){
+                moneyScript.MultiplyPriceChange(1.0f, 1.0f, 1.0f, 1.0f);
+                moneyScript.ScreenUpdatePrices();
+            } else if(earlyGameTitleList[randNum].IndexOf("The world has entered an economic depression") >= 0){
+                moneyScript.MultiplyPriceChange(3.0f, 3.0f, 3.0f, 3.0f);
+                moneyScript.ScreenUpdatePrices();
+            } else if(earlyGameTitleList[randNum].IndexOf("The assembly line takes the world by storm!") >= 0){
+                moneyScript.MultiplyPriceChange(0.75f, 0.75f, 0.75f, 0.75f);
+                moneyScript.ScreenUpdatePrices();
+            } else if(earlyGameTitleList[randNum].IndexOf("The commercial shipping container revolutionizes industry") >= 0){
+                moneyScript.MultiplyPriceChange(1.0f, 1.0f, 1.0f, 1.0f);
+                moneyScript.ScreenUpdatePrices();
+            }
+        } else {
+            
         }
 
         //earlyGameTitleList.RemoveAt(randNum);

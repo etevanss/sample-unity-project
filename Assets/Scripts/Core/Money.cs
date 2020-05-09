@@ -58,11 +58,14 @@ public class Money : MonoBehaviour
       woodP = (int)(woodP * log);
       fishP = (int)(fishP * fis);
     }
+    public void CalculateCurrency(){
+      //TODO
+    }
     void FixedUpdate()
     {
         GameObject Economic = GameObject.Find("EconomicStabilityBar");
         EconomicStability Econ = Economic.GetComponent<EconomicStability>();
-        CurrencyF += Factories / 50;
+        //CurrencyF += Factories / 50;
         CurrencyF += Time.deltaTime * ( Factories + Wood * 4 / 3 + Fish * 4 / 3 + Mines * 4 / 3) * (Econ.economicStabilityF * .01f);
         CurrencyRound = Mathf.RoundToInt(CurrencyF);
         Currency.text = "" + CurrencyRound;
