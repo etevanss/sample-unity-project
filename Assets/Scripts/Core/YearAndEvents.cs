@@ -92,11 +92,28 @@ public class YearAndEvents : MonoBehaviour
 
         GameObject percent = GameObject.Find("Percent");
         PercentIndustrialized percentScript = percent.GetComponent<PercentIndustrialized>();
+
+        GameObject stability = GameObject.Find("Stability");
+        EconomicStability stabilityScript = stability.GetComponent<EconomicStability>();
+
+        GameObject MoneyListener = GameObject.Find("Money Listener");
+        Money moneyScript = MoneyListener.GetComponent<Money>();
+
+        Debug.Log(stabilityScript.economicStabilityF);
+
+        if(stabilityScript.economicStabilityF <= 90.0 || moneyScript.CurrencyF <= 0.0) {
+            Time.timeScale = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+            Cursor.visible = true;
+        }
+
         if(year == 2100 || percentScript.percentF >= 100.0){ // ends game at year 2100 or if world fully industrialized
             Time.timeScale = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
             Cursor.visible = true;
         }
+
+
     }
 
     IEnumerator OpenGlobalEventPanel(){

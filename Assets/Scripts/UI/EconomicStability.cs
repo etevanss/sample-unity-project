@@ -12,6 +12,7 @@ public class EconomicStability : MonoBehaviour
 
     void Start()
     {
+        economicStabilityF = 100;
         esSlider.value = 100;
     }
 
@@ -29,8 +30,6 @@ public class EconomicStability : MonoBehaviour
       float diff6 = Math.Abs(moneyScript.Mines -  moneyScript.Wood);
 
       float avgDiff = diff1 + diff2 + diff3 + diff4 + diff5 + diff6 / 6;
-
-      Debug.Log(avgDiff);
 
 
       economicStabilityF = 100 - (avgDiff * 5/2);

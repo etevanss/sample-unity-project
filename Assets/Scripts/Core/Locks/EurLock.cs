@@ -14,9 +14,9 @@ public class EurLock : MonoBehaviour
         Money moneyScript = MoneyListener.GetComponent<Money>();
         GameObject ContinentsObj = GameObject.Find("Countries");
       Continents Cont = ContinentsObj.GetComponent<Continents>();
-        if (moneyScript.CurrencyF >= 1000)
+        if (moneyScript.CurrencyF >= 1500)
         {
-            moneyScript.CurrencyF -= 1000;
+            moneyScript.CurrencyF -= 1500;
             Cont.ActivateEur();
             Destroy(gameObject);
         }
