@@ -9,11 +9,10 @@ public class YearAndEvents : MonoBehaviour
 
     public GameObject globalEventPanel;
     public GameObject topLeftPanel;
-	  public GameObject store;
+	public GameObject store;
     public GameObject progressBars;
     public GameObject newsPanel;
     public GameObject newsLogPanel;
-    //public GameObject fadeOutPanel;
 
     public Text yearText;
     public float yearFloat = 1800;
@@ -21,16 +20,12 @@ public class YearAndEvents : MonoBehaviour
 
     public Button fastForwardButton;
     public bool hasBeenClicked = false;
-
+    public bool isFF = false;
 
     public Text eventTitle;
     public Text eventBodyText;
 
     public Text newsLogText;
-    //public Text percent;
-
-
-
 
     List<string> earlyGameTitleList = new List<string>();
     List<string> earlyGameDescList = new List<string>();
@@ -81,10 +76,13 @@ public class YearAndEvents : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(isFF);
         if(hasBeenClicked)
         {
+            isFF = true;
             UpdateYearFastForwardUI();
         } else {
+            isFF = false;
             UpdateYearUI();
         }
 
@@ -97,13 +95,13 @@ public class YearAndEvents : MonoBehaviour
         GameObject MoneyListener = GameObject.Find("Money Listener");
         Money moneyScript = MoneyListener.GetComponent<Money>();
 
-        /*
-        if(stabilityScript.economicStabilityF <= 90.0 || moneyScript.CurrencyF <= 0.0) {
+        
+        if(stabilityScript.economicStabilityF <= 35.0 || moneyScript.CurrencyF < 0.0) {
             Time.timeScale = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
             Cursor.visible = true;
         }
-        */
+        
 
         if(year == 2100 || percentScript.percentF >= 100.0){ // ends game at year 2100 or if world fully industrialized
             Time.timeScale = 0;
@@ -137,12 +135,18 @@ public class YearAndEvents : MonoBehaviour
         Money moneyScript = MoneyListener.GetComponent<Money>();
 
         int randNum = Random.Range(0, earlyGameTitleList.Count);
-        //int randNum = 0;
+        int randNum2 = Random.Range(0, lateGameTitleList.Count);
+        
+        if(year < 1950){
+            eventTitle.text = earlyGameTitleList[randNum];
+            eventBodyText.text = earlyGameDescList[randNum];
+        } else {
+            eventTitle.text = lateGameTitleList[randNum2];
+            eventBodyText.text = lateGameDescList[randNum2];
+        }
 
-        eventTitle.text = earlyGameTitleList[randNum];
-        eventBodyText.text = earlyGameDescList[randNum];
+        //newsLogText.text += "\n" + year + ": " + earlyGameTitleList[randNum] + "\n";
 
-        newsLogText.text += "\n" + year + ": " + earlyGameTitleList[randNum] + "\n";
         if(year < 1950){
             if(earlyGameTitleList[randNum].IndexOf("A world war has erupted!") >= 0){
                 moneyScript.MultiplyPriceChange(2.0f, 2.0f, 2.0f, 2.0f);
@@ -164,7 +168,22 @@ public class YearAndEvents : MonoBehaviour
                 moneyScript.ScreenUpdatePrices();
             }
         } else {
-            
+            if(lateGameTitleList[randNum].IndexOf("Hot, dry climate results in global forest fires") >= 0){
+                moneyScript.MultiplyPriceChange(1.0f, 1.0f, 1.0f, 1.0f);
+                moneyScript.ScreenUpdatePrices();
+            } else if(lateGameTitleList[randNum].IndexOf("Global climate change has shifted optimal harvesting periods") >= 0){
+                moneyScript.MultiplyPriceChange(1.0f, 1.0f, 1.0f, 1.0f);
+                moneyScript.ScreenUpdatePrices();
+            } else if(lateGameTitleList[randNum].IndexOf("Severe air pollution has increased respiratory illness prevalence worldwide") >= 0){
+                moneyScript.MultiplyPriceChange(1.0f, 1.0f, 1.0f, 1.0f);
+                moneyScript.ScreenUpdatePrices();
+            } else if(lateGameTitleList[randNum].IndexOf("Rapid industrial pollution causes overuse of natural resources") >= 0){
+                moneyScript.MultiplyPriceChange(1.0f, 1.0f, 1.0f, 1.0f);
+                moneyScript.ScreenUpdatePrices();
+            } else if(lateGameTitleList[randNum].IndexOf("Soil pollution has severely stunted the growth of agriculture and food industries") >= 0){
+                moneyScript.MultiplyPriceChange(1.0f, 1.0f, 1.0f, 1.0f);
+                moneyScript.ScreenUpdatePrices();
+            }
         }
 
         //earlyGameTitleList.RemoveAt(randNum);

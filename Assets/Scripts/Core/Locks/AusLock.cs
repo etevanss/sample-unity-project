@@ -14,9 +14,9 @@ public class AusLock : MonoBehaviour
         Money moneyScript = MoneyListener.GetComponent<Money>();
         GameObject ContinentsObj = GameObject.Find("Countries");
       Continents Cont = ContinentsObj.GetComponent<Continents>();
-        if (moneyScript.CurrencyF >= 750)
+        if (moneyScript.CurrencyF >= 500)
         {
-            moneyScript.CurrencyF -= 750;
+            moneyScript.CurrencyF -= 500;
             Cont.ActivateAus();
             Destroy(gameObject);
         }

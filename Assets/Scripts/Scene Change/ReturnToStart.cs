@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ReturnToStart : MonoBehaviour
 {
-    public void ReturnToStartButton(){
+    public void ReturnToStartButtonFromFinalScene(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4);
+    }
+    public void ReturnToStartButtonFromFinalScene2(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 5);
     }
 }
