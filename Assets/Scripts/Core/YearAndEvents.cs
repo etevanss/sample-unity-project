@@ -20,7 +20,7 @@ public class YearAndEvents : MonoBehaviour
 
     public Button fastForwardButton;
     public bool hasBeenClicked = false;
-    public bool isFF = false;
+    //public bool isFF = false;
 
     public Text eventTitle;
     public Text eventBodyText;
@@ -78,10 +78,8 @@ public class YearAndEvents : MonoBehaviour
     {
         if(hasBeenClicked)
         {
-            isFF = true;
             UpdateYearFastForwardUI();
         } else {
-            isFF = false;
             UpdateYearUI();
         }
 
@@ -185,8 +183,6 @@ public class YearAndEvents : MonoBehaviour
             }
         }
 
-        //earlyGameTitleList.RemoveAt(randNum);
-        //earlyGameDescList.RemoveAt(randNum);
     }
 
     public void ExitPopUp()

@@ -4019,6 +4019,7 @@ MonoBehaviour:
   year: 0
   fastForwardButton: {fileID: 2045374963}
   hasBeenClicked: 0
+  isFF: 0
   eventTitle: {fileID: 703763863}
   eventBodyText: {fileID: 904394497}
   newsLogText: {fileID: 382219310}
@@ -7505,6 +7506,7 @@ GameObject:
   - component: {fileID: 1585139609}
   - component: {fileID: 1585139611}
   - component: {fileID: 1585139610}
+  - component: {fileID: 1585139612}
   m_Layer: 5
   m_Name: Currency
   m_TagString: Untagged
@@ -7571,6 +7573,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585139608}
   m_CullTransparentMesh: 0
+--- !u!114 &1585139612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585139608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08b1af2d03984b8baeb1b91e18837e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalEventPanel: {fileID: 0}
+  topLeftPanel: {fileID: 0}
+  store: {fileID: 0}
+  progressBars: {fileID: 0}
+  newsPanel: {fileID: 0}
+  newsLogPanel: {fileID: 0}
+  yearText: {fileID: 0}
+  yearFloat: 1800
+  year: 0
+  fastForwardButton: {fileID: 2045374963}
+  hasBeenClicked: 0
+  isFF: 0
+  eventTitle: {fileID: 0}
+  eventBodyText: {fileID: 0}
+  newsLogText: {fileID: 0}
 --- !u!1 &1601002833
 GameObject:
   m_ObjectHideFlags: 0

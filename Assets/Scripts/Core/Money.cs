@@ -65,10 +65,18 @@ public class Money : MonoBehaviour
     {
         GameObject Economic = GameObject.Find("EconomicStabilityBar");
         EconomicStability Econ = Economic.GetComponent<EconomicStability>();
-        //CurrencyF += Factories / 50;
-        CurrencyF += Time.deltaTime * ( Factories + Wood * 4 / 3 + Fish * 4 / 3 + Mines * 4 / 3) * (Econ.economicStabilityF * .01f);
+
+        GameObject year = GameObject.Find("Currency");
+        YearAndEvents yearScript = year.GetComponent<YearAndEvents>();
+
+        if(yearScript.hasBeenClicked){
+            CurrencyF += 5 * Time.deltaTime * ( Factories + Wood * 4 / 3 + Fish * 4 / 3 + Mines * 4 / 3) * (Econ.economicStabilityF * .01f);
+        } else {
+            CurrencyF += Time.deltaTime * ( Factories + Wood * 4 / 3 + Fish * 4 / 3 + Mines * 4 / 3) * (Econ.economicStabilityF * .01f);
+        }
         CurrencyRound = Mathf.RoundToInt(CurrencyF);
         Currency.text = "" + CurrencyRound;
+
     }
     // Update is called once per frame
     void Update()
