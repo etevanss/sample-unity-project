@@ -76,7 +76,6 @@ public class YearAndEvents : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(isFF);
         if(hasBeenClicked)
         {
             isFF = true;
