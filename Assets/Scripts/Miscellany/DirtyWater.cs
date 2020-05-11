@@ -17,7 +17,9 @@ public class DirtyWater : MonoBehaviour
 
     void Update()
     {
-        float t = Mathf.PingPong(Time.time, duration) / duration;
+        GameObject Industry = GameObject.Find("industrialized");
+        PercentIndustrialized Pct = Industry.GetComponent<PercentIndustrialized>();
+        float t = Pct.percentF / 100;
         cam.backgroundColor = Color.Lerp(color1, color2, t);
     }
 }

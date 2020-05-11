@@ -526,8 +526,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 388293246}
   m_HandleRect: {fileID: 388293245}
   m_Direction: 2
-  m_Value: 0.9962885
-  m_Size: 0.44804648
+  m_Value: 0.99628836
+  m_Size: 0.44804642
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2620,8 +2620,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -576260787
-  m_SortingLayer: 1
+  m_SortingLayerID: 982972975
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b25f859e28e10472b922b990642e1975, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2634,8 +2634,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &427304642
-PolygonCollider2D:
+--- !u!61 &427304642
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2644,10 +2644,10 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.058173835, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2657,43 +2657,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.14, y: 0.31}
-      - {x: 1.03, y: 0.39}
-      - {x: 0.94, y: 1.1999999}
-      - {x: 0.84, y: 1.4699999}
-      - {x: 0.53, y: 1.7099999}
-      - {x: 0.44, y: 1.73}
-      - {x: -0.52, y: 1.73}
-      - {x: -0.84999996, y: 1.51}
-      - {x: -0.93, y: 1.25}
-      - {x: -0.95, y: 0.42}
-      - {x: -1.16, y: 0.32}
-      - {x: -1.16, y: -1.61}
-      - {x: -1.0799999, y: -1.6899999}
-      - {x: 1.0799999, y: -1.6899999}
-      - {x: 1.15, y: -1.55}
-      - {x: 1.16, y: -0.59}
-      - {x: 1.16, y: 0.22}
-    - - {x: -0.17999999, y: -1.17}
-      - {x: -0.14, y: -0.96999997}
-      - {x: -0.099999994, y: -0.71999997}
-      - {x: -0.19, y: -0.59999996}
-      - {x: -0.19999999, y: -0.5}
-      - {x: -0.04, y: -0.35999998}
-      - {x: 0.17999999, y: -0.47}
-      - {x: 0.089999996, y: -0.71999997}
-      - {x: 0.099999994, y: -0.82}
-      - {x: 0.17, y: -1.13}
-      - {x: 0.19, y: -1.1999999}
-      - {x: -0.19, y: -1.1999999}
-    - - {x: -0.42, y: 0.53}
-      - {x: -0.35999998, y: 1.1899999}
-      - {x: 0.28, y: 1.24}
-      - {x: 0.42, y: 1.09}
-      - {x: 0.42, y: 0.39999998}
-      - {x: -0.42, y: 0.39999998}
+  serializedVersion: 2
+  m_Size: {x: 2.3156247, y: 3.46}
+  m_EdgeRadius: 0
 --- !u!114 &427304643
 MonoBehaviour:
   m_ObjectHideFlags: 0

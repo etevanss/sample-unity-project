@@ -10,6 +10,7 @@ public class NorthLock : MonoBehaviour
 
     }
     void OnMouseDown(){
+      Debug.Log("North!!!");
       GameObject MoneyListener = GameObject.Find("Money Listener");
       Money moneyScript = MoneyListener.GetComponent<Money>();
       GameObject ContinentsObj = GameObject.Find("Countries");

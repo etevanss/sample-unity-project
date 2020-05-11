@@ -11,6 +11,7 @@ public class AusLock : MonoBehaviour
     }
     void OnMouseDown()
     {
+        Debug.Log("AUSTRALIA");
         GameObject MoneyListener = GameObject.Find("Money Listener");
         Money moneyScript = MoneyListener.GetComponent<Money>();
         GameObject ContinentsObj = GameObject.Find("Countries");
