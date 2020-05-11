@@ -165,20 +165,20 @@ public class YearAndEvents : MonoBehaviour
                 moneyScript.ScreenUpdatePrices();
             }
         } else {
-            if(lateGameTitleList[randNum].IndexOf("Hot, dry climate results in global forest fires") >= 0){
-                moneyScript.MultiplyPriceChange(1.0f, 1.0f, 1.0f, 1.0f);
+            if(lateGameTitleList[randNum2].IndexOf("Hot, dry climate results in global forest fires") >= 0){
+                moneyScript.MultiplyPriceChange(2.0f, 2.0f, 3.0f, 2.0f);
                 moneyScript.ScreenUpdatePrices();
-            } else if(lateGameTitleList[randNum].IndexOf("Global climate change has shifted optimal harvesting periods") >= 0){
-                moneyScript.MultiplyPriceChange(1.0f, 1.0f, 1.0f, 1.0f);
+            } else if(lateGameTitleList[randNum2].IndexOf("Global climate change has shifted optimal harvesting periods") >= 0){
+                moneyScript.MultiplyPriceChange(2.0f, 2.0f, 2.0f, 2.0f);
                 moneyScript.ScreenUpdatePrices();
-            } else if(lateGameTitleList[randNum].IndexOf("Severe air pollution has increased respiratory illness prevalence worldwide") >= 0){
-                moneyScript.MultiplyPriceChange(1.0f, 1.0f, 1.0f, 1.0f);
+            } else if(lateGameTitleList[randNum2].IndexOf("Severe air pollution has increased respiratory illness prevalence worldwide") >= 0){
+                moneyScript.MultiplyPriceChange(2.0f, 2.0f, 2.0f, 2.0f);
                 moneyScript.ScreenUpdatePrices();
-            } else if(lateGameTitleList[randNum].IndexOf("Rapid industrial pollution causes overuse of natural resources") >= 0){
-                moneyScript.MultiplyPriceChange(1.0f, 1.0f, 1.0f, 1.0f);
+            } else if(lateGameTitleList[randNum2].IndexOf("Rapid industrial pollution causes overuse of natural resources") >= 0){
+                moneyScript.MultiplyPriceChange(2.0f, 2.0f, 2.0f, 2.0f);
                 moneyScript.ScreenUpdatePrices();
-            } else if(lateGameTitleList[randNum].IndexOf("Soil pollution has severely stunted the growth of agriculture and food industries") >= 0){
-                moneyScript.MultiplyPriceChange(1.0f, 1.0f, 1.0f, 1.0f);
+            } else if(lateGameTitleList[randNum2].IndexOf("Soil pollution has severely stunted the growth of agriculture and food industries") >= 0){
+                moneyScript.MultiplyPriceChange(2.0f, 2.0f, 2.0f, 2.0f);
                 moneyScript.ScreenUpdatePrices();
             }
         }
