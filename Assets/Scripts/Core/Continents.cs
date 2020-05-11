@@ -79,7 +79,6 @@ public class Continents : MonoBehaviour
       africa.layer = LayerMask.NameToLayer("BG");
       GameObject Boundary = GameObject.Find("Africa Boundary");
       Destroy(Boundary);
-      africaLock.SetActive(false);
     }
     public void ActivateNorth(){
       north.layer = LayerMask.NameToLayer("BG");

@@ -258,8 +258,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 161.40002, y: -12.799988}
-  m_SizeDelta: {x: 322.80005, y: 140}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &253848965
 MonoBehaviour:
@@ -323,7 +323,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819122821}
   m_LocalRotation: {x: -0, y: 0.107200995, z: -0, w: 0.99423736}
-  m_LocalPosition: {x: 0, y: 0, z: 9}
+  m_LocalPosition: {x: 0, y: 0, z: 13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 93687044}
@@ -331,8 +331,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 12.308001, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: 96}
-  m_SizeDelta: {x: 632.7, y: 103.2}
+  m_AnchoredPosition: {x: 31, y: 24}
+  m_SizeDelta: {x: 1543.7, y: 289.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &819122823
 MonoBehaviour:
@@ -354,18 +354,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 71f02fea53f224e04aed2b83d3b7c980, type: 3}
-    m_FontSize: 35
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 50
+    m_MaxSize: 120
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: industrialize.io
+  m_Text: Carpe Terram
 --- !u!222 &819122824
 CanvasRenderer:
   m_ObjectHideFlags: 0
